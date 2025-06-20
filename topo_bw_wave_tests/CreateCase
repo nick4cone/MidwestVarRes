@@ -1,0 +1,21 @@
+#!/bin/sh
+CESM_DIR=/glade/derecho/scratch/nforcone/CAM_6_4_025_20240829
+COMPSET=FADIAB
+MACHINE=derecho
+RES=
+PECOUNT=256
+CASE_PATH=~/CAM_6_4_025_20240829_cases
+PROJ=UMIC0107
+
+$CESM_DIR/cime/scripts/create_newcase --compset $COMPSET --mach $MACHINE --res $RES --pecount $PECOUNT --case $CASE_PATH --run-unsupported --project $PROJ
+
+cd $CASE_PATH
+
+./xmlchange STOP_OPTION=ndays
+./xmlchange STOP_N=10
+./xmlchange RESUBMIT=0
+./xmlchange JOB_WALLCLOCK_TIME=01:00:00
+./xmlchange DOUT_S='FALSE'
+./xmlchange ATM_NCPL=
+
+./case.setup

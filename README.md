@@ -8,10 +8,10 @@
 </domain>
 ```
 ```
-<model_grid alias="ne16np4.WEST_ATLANTIC.ne16x2" not_compset="_POP">
-  <grid name="atm">ne16np4.WEST_ATLANTIC.ne16x2</grid>
-  <grid name="lnd">ne16np4.WEST_ATLANTIC.ne16x2</grid>
-  <grid name="ocnice">ne16np4.WEST_ATLANTIC.ne16x2</grid>
+<model_grid alias="ne0MIDWESTne30x32_ne0MIDWESTne30x32" not_compset="_POP">
+  <grid name="atm">ne0np4.MIDWEST.ne30x32</grid>
+  <grid name="lnd">ne0np4.MIDWEST.ne30x32</grid>
+  <grid name="ocnice">ne0np4.MIDWEST.ne30x32</grid>
   <mask>tx0.1v2</mask>
 </model_grid>
 ```

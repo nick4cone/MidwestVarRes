@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# netcdf files and Exodus meshes
+*.nc
+*.g
+
 # C extensions
 *.so
 

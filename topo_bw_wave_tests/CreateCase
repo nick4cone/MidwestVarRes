@@ -1,10 +1,10 @@
 #!/bin/sh
-CESM_DIR=/glade/derecho/scratch/nforcone/CAM_6_4_025_20240829
+CESM_DIR=/glade/u/home/nforcone/CAM_6_4_025_20240829
 COMPSET=FADIAB
 MACHINE=derecho
-RES=
-PECOUNT=256
-CASE_PATH=~/CAM_6_4_025_20240829_cases
+RES=ne0MIDWESTne30x32_ne0MIDWESTne30x32
+PECOUNT=512
+CASE_PATH=~/CAM_6_4_025_20240829_cases/CAM_6_4_025_20240829_topo_bw_dry_ne0MIDWESTne30x32_ne0MIDWESTne30x32
 PROJ=UMIC0107
 
 $CESM_DIR/cime/scripts/create_newcase --compset $COMPSET --mach $MACHINE --res $RES --pecount $PECOUNT --case $CASE_PATH --run-unsupported --project $PROJ
@@ -16,6 +16,4 @@ cd $CASE_PATH
 ./xmlchange RESUBMIT=0
 ./xmlchange JOB_WALLCLOCK_TIME=01:00:00
 ./xmlchange DOUT_S='FALSE'
-./xmlchange ATM_NCPL=
-
-./case.setup
+./xmlchange --file env_build.xml --id CAM_CONFIG_OPTS --val "--phys adiabatic --analytic_ic"

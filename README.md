@@ -19,3 +19,5 @@
 | case name | ndays | physics tstep | n nodes | runtime |
 | -- | -- | -- | -- | -- |
 | CAM_6_4_025_20240829_topo_bw_dry_ne0MIDWESTne30x32_ne0MIDWESTne30x32 | 10 | 54 seconds | 4 | tbd |
+## Atmosphere initial condition
+[Herbie: Retrieve NWP Model Data](https://herbie.readthedocs.io/en/latest/index.html)

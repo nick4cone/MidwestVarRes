@@ -1,0 +1,26 @@
+#PBS -A UMIC0107
+#PBS -l walltime=12:00:00
+#PBS -q main
+#PBS -l select=1:ncpus=128
+
+module load conda
+conda activate betacast
+
+cd $BETACAST/py_atm_to_cam
+
+python atm_to_cam.py \
+  --datasource "HRRRml" \
+  --numlevels 32 \
+  --YYYYMMDDHH 2020081000 \
+  --data_filename "/glade/derecho/scratch/nforcone/HRRR_native/hrrr.20200810_conus_hrrr.t00z.wrfnatf00.grib2" \
+  --wgt_filename "/glade/u/home/nforcone/MidwestVarRes/map_hrrr_3km_TO_midwest-06-16-2025_edit22_np4_SCRIP_patc.nc" \
+  --dycore "se" \
+  --compress_file \
+  --write_floats \
+  --add_cloud_vars \
+  --adjust_config '""' \
+  --model_topo_file "/glade/u/home/nforcone/MidwestVarRes/topo_midwest-06-16-2025_edit22_gmted2010_modis_bedmachine_nc3000_Laplace0100_noleak_20250624.nc" \
+  --se_inic "/glade/derecho/scratch/nforcone/betacast_HRRRml_20200810" \
+  --write_debug_files \
+  --write_debug_dir "/glade/u/home/nforcone/MidwestVarRes/" \
+  --verbose

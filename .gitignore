@@ -7,6 +7,14 @@ __pycache__/
 *.nc
 *.g
 
+# log files
+GenATM.o*
+GenATM.e*
+GenGRID_MAPPING_WEIGHTS.e*
+GenGRID_MAPPING_WEIGHTS.o*
+GenTOPO.e*
+GenTOPO.o*
+
 # C extensions
 *.so
 

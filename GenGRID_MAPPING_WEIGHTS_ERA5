@@ -1,0 +1,14 @@
+#!/bin/sh
+#PBS -A UMIC0107
+#PBS -l walltime=01:00:00
+#PBS -q main
+#PBS -l select=1:ncpus=128
+module load conda
+conda activate betacast
+cd $BETACAST/py_remapping
+python gen_analysis_to_model_wgt_file.py \
+	--ANLGRID "era5_0.3gaus" \
+	--DSTGRIDNAME "midwest-06-16-2025_edit22_np4_SCRIP" \
+	--DSTGRIDFILE "/glade/u/home/nforcone/MidwestVarRes/midwest-06-16-2025_edit22_np4_SCRIP.nc" \
+	--ANLGRIDPATH "../grids/anl_scrip/" \
+	--WGTFILEDIR "/glade/u/home/nforcone/MidwestVarRes/"

@@ -1,5 +1,5 @@
 #PBS -A UMIC0107
-#PBS -l walltime=01:00:00
+#PBS -l walltime=02:00:00
 #PBS -q main
 #PBS -l select=1:ncpus=128
 
@@ -9,18 +9,19 @@ conda activate betacast
 cd $BETACAST/py_atm_to_cam
 
 python atm_to_cam.py \
-  --datasource "HRRRml" \
+  --datasource "ERA5mlRDA" \
   --numlevels 32 \
   --YYYYMMDDHH 2020081000 \
-  --data_filename "/glade/derecho/scratch/nforcone/HRRR_native/hrrr.20200810_conus_hrrr.t00z.wrfnatf00.grib2" \
-  --wgt_filename "/glade/u/home/nforcone/MidwestVarRes/map_hrrr_3km_TO_midwest-06-16-2025_edit22_np4_SCRIP_patc.nc" \
+  --data_filename "/glade/campaign/collections/rda/data/ds633.6/e5.oper.invariant/e5.oper.invariant.128_129_z.regn320sc.2016010100_2016010100.nc" \
+  --wgt_filename "/glade/u/home/nforcone/MidwestVarRes/map_era5_0.3gaus_TO_midwest-06-16-2025_edit22_np4_SCRIP_patc.nc" \
   --dycore "se" \
+  --RDADIR "/glade/campaign/collections/rda/data/ds633.6/" \
   --compress_file \
   --write_floats \
   --add_cloud_vars \
   --adjust_config '""' \
   --model_topo_file "/glade/u/home/nforcone/MidwestVarRes/topo_midwest-06-16-2025_edit22_gmted2010_modis_bedmachine_nc3000_Laplace0100_noleak_20250624.nc" \
-  --se_inic "/glade/derecho/scratch/nforcone/betacast_HRRRml_20200810.nc" \
+  --se_inic "/glade/derecho/scratch/nforcone/betacast_ERA5ml_20200810.nc" \
   --write_debug_files \
   --write_debug_dir "/glade/u/home/nforcone/MidwestVarRes/" \
   --verbose

@@ -14,6 +14,10 @@ GenGRID_MAPPING_WEIGHTS.e*
 GenGRID_MAPPING_WEIGHTS.o*
 GenTOPO.e*
 GenTOPO.o*
+GenATM_ERA5_Background.e*
+GenATM_ERA5_Background.o*
+GenGRID_MAPPING_WEIGHTS_ERA5.e*
+GenGRID_MAPPING_WEIGHTS_ERA5.o*
 
 # C extensions
 *.so

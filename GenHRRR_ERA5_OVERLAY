@@ -1,0 +1,7 @@
+#!/bin/sh
+module load conda
+conda activate betacast
+cd $BETACAST/py_atm_to_cam
+base_file="/glade/derecho/scratch/nforcone/betacast_HRRRml_on_ERA5ml_20200810.nc"
+top_file="/glade/derecho/scratch/nforcone/betacast_HRRRml_20200810.nc"
+python overlay.py $base_file $top_file

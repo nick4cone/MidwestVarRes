@@ -1,6 +1,6 @@
 #!/bin/sh
 #PBS -A UMIC0107
-#PBS -l walltime=01:00:00
+#PBS -l walltime=00:30:00
 #PBS -q main
 #PBS -l select=1:ncpus=128
 module load conda

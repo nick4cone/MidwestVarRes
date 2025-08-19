@@ -16,8 +16,8 @@
 </model_grid>
 ```
 ## CAM_6_4_025 Topo BW Cases
-| case name                                                                     | STOP_OPTION | STOP_N     | sim time |se_tstep      | n nodes | runtime | se_nu_top | ATM_NCPL | n lev |
-| --                                                                            | --          | --         | --       |--            | ------- | --      | --        | --       | --    |
-| StormSPEED.stormspeed_refmesh_FHISTC_LTso_ne0MIDWESTne30x32_ne0MIDWESTne30x32 | nsteps      | 15         | 24 min   |8             | 8       | 0.15 hr | 1e4       | 900      | 58    |
+| case name                                                                     | STOP_OPTION | STOP_N     | sim time |se_tstep      | n nodes | runtime | se_nu_top | ATM_NCPL | n lev | columns |
+| --                                                                            | --          | --         | --       |--            | ------- | --      | --        | --       | --    | --      |
+| StormSPEED.stormspeed_refmesh_FHISTC_LTso_ne0MIDWESTne30x32_ne0MIDWESTne30x32 | nsteps      | 15         | 24 min   |8             | 8       | 0.15 hr | 1e4       | 900      | 58    | 316,010 |
 ## Atmosphere initial condition
 [Herbie: Retrieve NWP Model Data](https://herbie.readthedocs.io/en/latest/index.html)

@@ -1,0 +1,24 @@
+#!/bin/sh
+CESM_NH_DIR=/glade/derecho/scratch/nforcone/StormSPEED_NCF
+COMPSET=FHIST
+MACHINE=derecho
+RES=ne0MIDWESTne30x32_ne0MIDWESTne30x32
+PECOUNT=512
+CASE_PATH=~/StormSPEED_NCF_cases/StormSPEED_NCF_FHIST_ne0MIDWESTne30x32_ne0MIDWESTne30x32
+COMPILER=intel
+DRIVER=nuopc
+PROJ=UMIC0107
+
+$CESM_NH_DIR/cime/scripts/create_newcase --compset $COMPSET --mach $MACHINE --res $RES --pecount $PECOUNT --case $CASE_PATH --compiler $COMPILER --driver $DRIVER --run-unsupported --project $PROJ
+
+cd $CASE_PATH
+
+./xmlchange CAM_TARGET=theta-l
+./xmlchange STOP_OPTION=nsteps
+./xmlchange STOP_N=15
+./xmlchange RESUBMIT=0
+./xmlchange JOB_WALLCLOCK_TIME=01:00:00
+./xmlchange DOUT_S='FALSE'
+./xmlchange RUN_STARTDATE=2020-08-10
+./xmlchange ATM_NCPL=900
+./xmlchange ROF_NCPL=120

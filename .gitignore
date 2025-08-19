@@ -18,6 +18,7 @@ GenATM_ERA5_Background.e*
 GenATM_ERA5_Background.o*
 GenGRID_MAPPING_WEIGHTS_ERA5.e*
 GenGRID_MAPPING_WEIGHTS_ERA5.o*
+mksurfdata.o*
 
 # C extensions
 *.so

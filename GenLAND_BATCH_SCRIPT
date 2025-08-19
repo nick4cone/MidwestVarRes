@@ -1,0 +1,3 @@
+cd /glade/derecho/scratch/nforcone/ctsm5.3.002/tools/mksurfdata_esmf
+
+./gen_mksurfdata_jobscript_single --account UMIC0107 --debug --number-of-nodes 2 --tasks-per-node 128 --namelist-file /glade/derecho/scratch/nforcone/ctsm5.3.002/tools/mksurfdata_esmf/surfdata_midwest-06-16-2025_edit22_hist_2020_78pfts_c250630.namelist
